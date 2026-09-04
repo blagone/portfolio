@@ -1,69 +1,120 @@
-import Image from "next/image";
+const projects = [
+  {
+    title: "Сайт-портфолио",
+    description:
+      "Персональный сайт на Next.js и Tailwind CSS для представления моих работ и навыков.",
+  },
+  {
+    title: "Лендинг",
+    description:
+      "Современная адаптивная страница для презентации продукта или услуги.",
+  },
+  {
+    title: "Веб-приложение",
+    description:
+      "Будущий интерактивный проект с удобным интерфейсом и полезными функциями.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+    <main className="min-h-screen bg-slate-950 text-white">
+      <section className="mx-auto flex min-h-screen max-w-6xl flex-col px-6 py-8">
+        <nav className="flex items-center justify-between">
+          <span className="text-xl font-bold">blagone</span>
+
+          <a
+            href="#projects"
+            className="rounded-full border border-slate-700 px-5 py-2 text-sm transition hover:border-cyan-400 hover:text-cyan-400"
+          >
+            Мои работы
+          </a>
+        </nav>
+
+        <div className="flex flex-1 items-center py-20">
+          <div className="max-w-3xl">
+            <p className="mb-4 font-medium text-cyan-400">Привет! Меня зовут</p>
+
+            <h1 className="text-5xl font-bold tracking-tight sm:text-7xl">
+              blagone
+            </h1>
+
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
+              Я начинающий веб-разработчик. Создаю современные, удобные и
+              быстрые сайты с помощью React и Next.js
+            </p>
+
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="#projects"
+              className="mt-8 inline-block rounded-full bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+              Посмотреть проекты
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" className="bg-slate-900 px-6 py-24">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="text-3xl font-bold sm:text-4xl">Мои проекты</h2>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {projects.map((project) => (
+              <article
+                key={project.title}
+                className="rounded-2xl border border-slate-800 bg-slate-950 p-6"
+              >
+                <h3 className="text-xl font-semibold">{project.title}</h3>
+                <p className="mt-3 leading-7 text-slate-400">
+                  {project.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="bg-slate-950 px-6 py-24">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="text-3xl font-bold sm:text-4xl">Мои навыки</h2>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            {[
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "TypeScript",
+              "React",
+              "Next.js",
+              "Git",
+            ].map((skill) => (
+              <span
+                key={skill}
+                className="rounded-full border border-slate-700 px-5 py-2 text-slate-300"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="bg-cyan-400 px-6 py-20 text-slate-950">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="text-3xl font-bold sm:text-4xl">Связаться со мной</h2>
+
+          <p className="mt-4 max-w-2xl text-lg">
+            Посмотрите мои проекты и исходный код в профиле GitHub.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://github.com/blagone"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noreferrer"
+            className="mt-8 inline-block rounded-full bg-slate-950 px-6 py-3 font-semibold text-white transition hover:bg-slate-800"
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+            Открыть GitHub
           </a>
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }
