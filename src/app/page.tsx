@@ -14,9 +14,11 @@ const projects: Project[] = [
     githubUrl: "https://github.com/blagone/portfolio",
   },
   {
-    title: "Лендинг",
+    title: "Ember & Bean",
     description:
-      "Современная адаптивная страница для презентации продукта или услуги.",
+      "Адаптивный концепт-сайт specialty-кофейни с авторским визуальным стилем и интерактивной навигацией.",
+    liveUrl: "https://coffee-landing-kohl.vercel.app",
+    githubUrl: "https://github.com/blagone/coffee-landing",
   },
   {
     title: "Веб-приложение",
