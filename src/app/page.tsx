@@ -1,8 +1,17 @@
-const projects = [
+type Project = {
+  title: string;
+  description: string;
+  liveUrl?: string;
+  githubUrl?: string;
+};
+
+const projects: Project[] = [
   {
     title: "Сайт-портфолио",
     description:
       "Персональный сайт на Next.js и Tailwind CSS для представления моих работ и навыков.",
+    liveUrl: "https://portfolio-kappa-teal-36.vercel.app",
+    githubUrl: "https://github.com/blagone/portfolio",
   },
   {
     title: "Лендинг",
@@ -62,12 +71,36 @@ export default function Home() {
             {projects.map((project) => (
               <article
                 key={project.title}
-                className="rounded-2xl border border-slate-800 bg-slate-950 p-6"
+                className="flex flex-col rounded-2xl border border-slate-800 bg-slate-950 p-6"
               >
                 <h3 className="text-xl font-semibold">{project.title}</h3>
-                <p className="mt-3 leading-7 text-slate-400">
+                <p className="mt-3 flex-1 leading-7 text-slate-400">
                   {project.description}
                 </p>
+                {(project.liveUrl || project.githubUrl) && (
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="rounded-full bg-cyan-400 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
+                      >
+                        Открыть сайт
+                      </a>
+                    )}
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="rounded-full border border-slate-700 px-4 py-2 text-sm font-semibold transition hover:border-cyan-400 hover:text-cyan-400"
+                      >
+                        Код на GitHub
+                      </a>
+                    )}
+                  </div>
+                )}
               </article>
             ))}
           </div>
