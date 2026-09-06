@@ -6,7 +6,7 @@ const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
   // Override default ignores of eslint-config-next.
-  globalIgnores(["public/flowboard-app/**",
+  globalIgnores(["public/flowboard-app/**", ".transaction/**",
     // Default ignores of eslint-config-next:
     ".next/**",
     "out/**",
@@ -16,4 +16,5 @@ const eslintConfig = defineConfig([
 ]);
 
 export default eslintConfig;
+
 

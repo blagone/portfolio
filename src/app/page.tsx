@@ -1,16 +1,23 @@
 import Image from "next/image";
+import Link from "next/link";
 import MascotHero from "./components/MascotHero";
 
-type Project = { index: string; title: string; description: string; result: string; tags: string[]; preview: string; liveUrl: string; githubUrl: string; accent: string };
+type Project = { index: string; title: string; description: string; result: string; tags: string[]; preview: string; liveUrl: string; githubUrl: string; caseUrl: string; accent: string };
 
 const projects: Project[] = [
-  { index: "01", title: "Сайт-портфолио", description: "Задача: собрать узнаваемую личную страницу, на которой проекты легко посмотреть и открыть.", result: "Результат: адаптивный сайт на Next.js с авторской иллюстрацией и прямыми ссылками на работы.", tags: ["Next.js", "TypeScript", "UI"], preview: "/previews/portfolio.png", liveUrl: "https://portfolio-kappa-teal-36.vercel.app", githubUrl: "https://github.com/blagone/portfolio", accent: "card-coral" },
-  { index: "02", title: "Ember & Bean", description: "Задача: придумать и реализовать выразительный концепт сайта specialty-кофейни.", result: "Результат: тёплый адаптивный лендинг с цельной айдентикой и интерактивной навигацией.", tags: ["React", "Концепт", "Responsive"], preview: "/previews/coffee.png", liveUrl: "https://coffee-landing-kohl.vercel.app", githubUrl: "https://github.com/blagone/coffee-landing", accent: "card-sage" },
-  { index: "03", title: "Flowboard", description: "Задача: объединить ежедневные задачи, календарь и обзор прогресса в одном веб-приложении.", result: "Результат: канбан-доска с фильтрами и аналитикой. Данные хранятся локально в браузере, без бэкенда.", tags: ["Next.js", "localStorage", "Web app"], preview: "/previews/flowboard.png", liveUrl: "/projects/flowboard", githubUrl: "https://github.com/blagone/task-board", accent: "card-sun" },
+  { index: "01", title: "Сайт-портфолио", description: "Задача: собрать узнаваемую личную страницу, на которой проекты легко посмотреть и открыть.", result: "Результат: адаптивный сайт на Next.js с авторской иллюстрацией и прямыми ссылками на работы.", tags: ["Next.js", "TypeScript", "UI"], preview: "/previews/portfolio.png", liveUrl: "https://portfolio-kappa-teal-36.vercel.app", githubUrl: "https://github.com/blagone/portfolio", caseUrl: "/projects/portfolio", accent: "card-coral" },
+  { index: "02", title: "Ember & Bean", description: "Задача: придумать и реализовать выразительный концепт сайта specialty-кофейни.", result: "Результат: тёплый адаптивный лендинг с цельной айдентикой и интерактивной навигацией.", tags: ["React", "Концепт", "Responsive"], preview: "/previews/coffee.png", liveUrl: "https://coffee-landing-kohl.vercel.app", githubUrl: "https://github.com/blagone/coffee-landing", caseUrl: "/projects/ember-bean", accent: "card-sage" },
+  { index: "03", title: "Flowboard", description: "Задача: объединить ежедневные задачи, календарь и обзор прогресса в одном веб-приложении.", result: "Результат: канбан-доска с фильтрами и аналитикой. Данные хранятся локально в браузере, без бэкенда.", tags: ["Next.js", "localStorage", "Web app"], preview: "/previews/flowboard.png", liveUrl: "/projects/flowboard", githubUrl: "https://github.com/blagone/task-board", caseUrl: "/projects/flowboard/case", accent: "card-sun" },
 ];
 
 const skills = ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Git"];
 const tickerItems = ["ВЕБ-РАЗРАБОТКА", "ИНТЕРФЕЙСЫ", "NEXT.JS", "ИДЕЯ → РЕЗУЛЬТАТ"];
+const workflow = [
+  { index: "01", title: "Идея", text: "Уточняю задачу и собираю смысл будущего продукта." },
+  { index: "02", title: "Структура и дизайн", text: "Продумываю сценарии, композицию и визуальный характер." },
+  { index: "03", title: "Разработка", text: "Собираю адаптивный интерфейс и проверяю детали взаимодействия." },
+  { index: "04", title: "Запуск", text: "Тестирую результат, исправляю шероховатости и публикую проект." },
+];
 
 function getTelegramUrl() {
   const value = process.env.TELEGRAM_URL ?? process.env.NEXT_PUBLIC_TELEGRAM_URL ?? "https://t.me/blagone";
@@ -28,7 +35,7 @@ export default function Home() {
       <section className="hero" id="top">
         <nav className="nav shell" aria-label="Основная навигация">
           <a className="brand" href="#top" aria-label="blagone — на главную">b.</a>
-          <div className="nav-links"><a href="#projects">проекты</a><a href="#about">обо мне</a><a href="#skills">навыки</a><a className="nav-cta" href="#contact">написать мне</a></div>
+          <div className="nav-links"><a href="#projects">проекты</a><a href="#workflow">процесс</a><a href="#about">обо мне</a><a className="nav-cta" href="#contact">написать мне</a></div>
         </nav>
         <div className="hero-grid shell">
           <div className="hero-copy">
@@ -53,11 +60,20 @@ export default function Home() {
                   <div className="card-topline"><span className="project-index">{project.index}</span><span className="scribble" aria-hidden="true">〰</span></div>
                   <h3>{project.title}</h3><p>{project.description}</p><p className="project-result">{project.result}</p>
                   <div className="tag-list">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-                  <div className="card-links"><a href={project.liveUrl} target="_blank" rel="noreferrer">Открыть ↗</a><a href={project.githubUrl} target="_blank" rel="noreferrer">Код ↗</a></div>
+                  <div className="card-links"><Link href={project.caseUrl}>Кейс →</Link><a href={project.liveUrl} target={project.liveUrl.startsWith("http") ? "_blank" : undefined} rel={project.liveUrl.startsWith("http") ? "noreferrer" : undefined}>Открыть ↗</a><a href={project.githubUrl} target="_blank" rel="noreferrer">Код ↗</a></div>
                 </div>
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="workflow-section" id="workflow" aria-labelledby="workflow-title">
+        <div className="shell">
+          <div className="section-heading align-left workflow-heading"><p className="kicker">как я работаю</p><h2 id="workflow-title">От идеи<br /><span>до запуска.</span></h2></div>
+          <ol className="workflow-grid">
+            {workflow.map((step) => <li key={step.index}><span>{step.index}</span><h3>{step.title}</h3><p>{step.text}</p></li>)}
+          </ol>
         </div>
       </section>
 
