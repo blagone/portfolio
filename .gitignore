@@ -41,3 +41,13 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+
+.bg-backup/
+.transaction/
+ROLLBACK.sh
+VERIFICATION.txt
+avatar-integration.diff
+portfolio-avatar-preview.png
+public/andrey-single.png
+public/avatar-standing-transparent.png
+public/illustrated-avatar-sketches-v3-black-high-tops.png
