@@ -7,7 +7,7 @@ type Project = { index: string; title: string; description: string; result: stri
 const projects: Project[] = [
   { index: "01", title: "Сайт-портфолио", description: "Задача: собрать узнаваемую личную страницу, на которой проекты легко посмотреть и открыть.", result: "Результат: адаптивный сайт на Next.js с авторской иллюстрацией и прямыми ссылками на работы.", tags: ["Next.js", "TypeScript", "UI"], preview: "/previews/portfolio.png", liveUrl: "https://portfolio-kappa-teal-36.vercel.app", githubUrl: "https://github.com/blagone/portfolio", caseUrl: "/projects/portfolio", accent: "card-coral" },
   { index: "02", title: "Ember & Bean", description: "Задача: придумать и реализовать выразительный концепт сайта specialty-кофейни.", result: "Результат: тёплый адаптивный лендинг с цельной айдентикой и интерактивной навигацией.", tags: ["React", "Концепт", "Responsive"], preview: "/previews/coffee.png", liveUrl: "https://coffee-landing-kohl.vercel.app", githubUrl: "https://github.com/blagone/coffee-landing", caseUrl: "/projects/ember-bean", accent: "card-sage" },
-  { index: "03", title: "Flowboard", description: "Задача: объединить ежедневные задачи, календарь и обзор прогресса в одном веб-приложении.", result: "Результат: канбан-доска с фильтрами и аналитикой. Данные хранятся локально в браузере, без бэкенда.", tags: ["Next.js", "localStorage", "Web app"], preview: "/previews/flowboard.png", liveUrl: "/projects/flowboard", githubUrl: "https://github.com/blagone/task-board", caseUrl: "/projects/flowboard/case", accent: "card-sun" },
+  { index: "03", title: "Flowboard", description: "Задача: превратить ежедневное планирование в понятный рабочий процесс без регистрации и лишних экранов.", result: "Результат: адаптивная PWA-доска с архивом, тегами, поиском, аналитикой и переносимыми JSON-резервными копиями.", tags: ["Next.js", "TypeScript", "PWA"], preview: "/previews/flowboard.png", liveUrl: "https://flowboard-blagone.vercel.app", githubUrl: "https://github.com/blagone/task-board", caseUrl: "/projects/flowboard/case", accent: "card-sun" },
 ];
 
 const skills = ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Git"];
@@ -90,4 +90,3 @@ export default function Home() {
     </main>
   );
 }
-
