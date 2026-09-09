@@ -86,8 +86,9 @@ export default function Home() {
         <div className="shell skills-grid"><div className="section-heading align-left"><p className="kicker">мой набор инструментов</p><h2>Думаю руками.<br /><span>Собираю в коде.</span></h2></div><div className="skill-cloud">{skills.map((skill, index) => <span className={`skill-chip chip-${(index % 4) + 1}`} key={skill}>{skill}</span>)}</div></div>
       </section>
 
-      <section className="contact-section" id="contact"><div className="shell contact-card"><span className="contact-star" aria-hidden="true">✦</span><p className="kicker">есть идея?</p><h2>Давайте сделаем<br /><em>что-нибудь классное.</em></h2><div className="contact-actions"><a className="button button-paper" href="mailto:blagonework@gmail.com">blagonework@gmail.com <span>↗</span></a><a className="button button-paper" href="https://github.com/blagone" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>{telegramUrl && <a className="button button-telegram" href={telegramUrl} target="_blank" rel="noreferrer">Написать в Telegram <span>↗</span></a>}</div></div></section>
+      <section className="contact-section" id="contact"><div className="shell contact-card"><span className="contact-star" aria-hidden="true">✦</span><p className="kicker">есть идея?</p><h2>Давайте сделаем<br /><em>что-нибудь классное.</em></h2><div className="contact-actions"><a className="button button-paper" href="mailto:blagonework@gmail.com">blagonework@gmail.com <span>↗</span></a><a className="button button-paper" href="https://github.com/blagone" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>{telegramUrl && <a className="button button-telegram" href={telegramUrl} target="_blank" rel="noreferrer">Написать в Telegram <span>↗</span></a>}</div><p className="contact-note">Открыт к предложениям: frontend, интерфейсы и небольшие продуктовые команды.</p></div></section>
       <footer><div className="shell footer-inner"><strong>b.</strong><span>© 2026 blagone. Сделано с вниманием к деталям.</span><a href="#top">наверх ↑</a></div></footer>
     </main>
   );
 }
+
