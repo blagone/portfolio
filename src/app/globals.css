@@ -71,7 +71,7 @@ h1 em::after { content: ""; position: absolute; left: 0; right: 0; bottom: -.07e
 .section-heading h2, .contact-card h2 { font-size: clamp(43px, 5.6vw, 76px); line-height: .97; font-weight: 950; }
 .section-heading h2 span { font-family: Georgia,serif; font-style: italic; font-weight: 400; }
 .section-heading > p:last-child { margin: 22px auto 0; max-width: 570px; font-size: 18px; line-height: 1.55; }
-.project-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 25px; align-items: stretch; }
+.project-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 25px; align-items: stretch; }
 .project-card { position: relative; min-height: 610px; border: var(--line); border-radius: 10px; display: flex; flex-direction: column; box-shadow: 7px 7px 0 var(--ink); transition: transform .2s, box-shadow .2s; overflow: hidden; }
 .project-preview { position: relative; width: 100%; aspect-ratio: 16 / 10; overflow: hidden; border-bottom: var(--line); background: var(--paper-light); }
 .project-preview img { object-fit: cover; object-position: top center; transition: transform .35s ease; }
@@ -79,6 +79,7 @@ h1 em::after { content: ""; position: absolute; left: 0; right: 0; bottom: -.07e
 .project-card-body { display: flex; flex: 1; flex-direction: column; padding: 24px 27px 27px; }
 .project-card:nth-child(2) { transform: translateY(22px) rotate(1deg); }
 .project-card:nth-child(3) { transform: rotate(-1deg); }
+.project-card:nth-child(4) { transform: translateY(16px) rotate(1deg); }
 .project-card:hover { transform: translateY(-7px) rotate(-.5deg); box-shadow: 12px 14px 0 var(--ink); }
 .card-coral { background: #e99a82; }
 .card-sage { background: #adb99d; }
@@ -167,7 +168,7 @@ footer { background: var(--ink); color: var(--paper); }
   .hero-copy { display: flex; flex-direction: column; align-items: center; }
   .avatar-stage { justify-self: center; width: min(90vw,540px); margin-top: -20px; }
   .project-grid { grid-template-columns: 1fr; max-width: 620px; margin-inline: auto; }
-  .project-card, .project-card:nth-child(2), .project-card:nth-child(3) { min-height: 0; transform: none; }
+  .project-card, .project-card:nth-child(2), .project-card:nth-child(3), .project-card:nth-child(4) { min-height: 0; transform: none; }
   .about-grid { grid-template-columns: 1fr; gap: 12px; }
   .skills-grid { grid-template-columns: 1fr; }.align-left { text-align: center; margin-inline: auto; }
   .workflow-grid { grid-template-columns: repeat(2,1fr); }
