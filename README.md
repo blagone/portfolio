@@ -1,6 +1,6 @@
 # Portfolio — Andrei Ishkin
 
-Персональное портфолио фронтенд-разработчика: кейсы, живые демо и исходный код проектов.
+Персональное портфолио Full-stack Product Developer: кейсы, живые демо и исходный код продуктов.
 
 **Сайт:** https://portfolio-kappa-teal-36.vercel.app/  
 **CRM-кейс:** https://portfolio-kappa-teal-36.vercel.app/projects/relay-crm  

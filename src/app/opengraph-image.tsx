@@ -13,7 +13,7 @@ export default function OpenGraphImage() {
       </div>
       <div style={{ display: "flex", flexDirection: "column" }}>
         <div style={{ fontSize: 84, lineHeight: .95, fontWeight: 900 }}>Андрей blagone</div>
-        <div style={{ display: "flex", marginTop: 24, fontSize: 44, color: "#747258" }}>Веб-разработчик · React · Next.js</div>
+        <div style={{ display: "flex", marginTop: 24, fontSize: 44, color: "#747258" }}>Full-stack Product Developer · Продукты · Автоматизации</div>
       </div>
       <div style={{ display: "flex", height: 22, background: "#d97b62", border: "4px solid #171711" }} />
     </div>, size,

@@ -40,9 +40,9 @@ export default function Home() {
         </nav>
         <div className="hero-grid shell">
           <div className="hero-copy">
-            <p className="eyebrow"><span>привет!</span> я веб-разработчик</p>
+            <p className="eyebrow"><span>привет!</span> я full-stack product developer</p>
             <h1>Делаю сайты,<br />в которых хочется <em>остаться.</em></h1>
-            <p className="hero-lead">Я Андрей blagone. Собираю понятные, быстрые и живые интерфейсы на React и Next.js — от идеи до работающего продукта.</p>
+            <p className="hero-lead">Я Андрей blagone. Создаю веб-приложения, Telegram-ботов, автоматизации и внутренние сервисы — от идеи до работающего продукта.</p>
             <div className="hero-actions"><a className="button button-dark" href="#projects">Смотреть работы <span>↓</span></a><a className="text-link" href="https://github.com/blagone" target="_blank" rel="noreferrer">GitHub ↗</a></div>
           </div>
           <MascotHero />
@@ -79,7 +79,7 @@ export default function Home() {
       </section>
 
       <section className="about-section" id="about">
-        <div className="shell about-grid"><p className="kicker">обо мне</p><div><h2>Я Андрей — веб-разработчик.</h2><p>Проектирую и собираю интерфейсы, в которых визуальная идея поддерживает понятную структуру. Работаю с React и Next.js, уделяю внимание адаптивности, скорости и деталям взаимодействия.</p></div></div>
+        <div className="shell about-grid"><p className="kicker">обо мне</p><div><h2>Я Андрей —<br />Full-stack Product Developer.</h2><p>Собираю продукты целиком: веб-приложения, Telegram-ботов, автоматизации и внутренние сервисы. Подбираю стек под задачу, использую AI-инструменты для ускорения разработки и довожу решения до деплоя.</p></div></div>
       </section>
 
       <section className="skills-section" id="skills">
